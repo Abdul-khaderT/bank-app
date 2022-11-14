@@ -1,0 +1,15 @@
+<ng-container *ngIf="(vm$ | async)! as data">
+  <ng-container *ngIf="(limit$ | async)! as limit">
+    <bb-make-transfer-form
+      *ngIf="!isLoading(data.loadingStatus); else loadingIndicator"
+      [account]="data.account"
+      [showMaskIndicator]="config.maskIndicator"
+      (submitTransfer)="submitTransfer($event)"
+      [maxLimit]="limit"
+    ></bb-make-transfer-form>
+  </ng-container>
+</ng-container>
+
+<ng-template #loadingIndicator>
+  <bb-loading-indicator-ui loaderSize="lg"></bb-loading-indicator-ui>
+</ng-template>

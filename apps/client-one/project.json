@@ -18,7 +18,7 @@
           "apps/client-one/src/favicon.ico",
           "apps/client-one/src/assets"
         ],
-        "styles": ["apps/client-one/src/styles.css"],
+        "styles": ["apps/client-one/src/styles.scss"],
         "scripts": []
       },
       "configurations": {
@@ -57,11 +57,16 @@
     "serve": {
       "executor": "@angular-devkit/build-angular:dev-server",
       "configurations": {
+        "development": {
+          "browserTarget": "client-one:build:development",
+          "proxyConfig": "./proxy.conf.json"
+        },
         "production": {
           "browserTarget": "client-one:build:production"
         },
-        "development": {
-          "browserTarget": "client-one:build:development"
+        "nl": {
+          "browserTarget": "golden-sample-app:build:nl",
+          "proxyConfig": "./proxy.conf.json"
         }
       },
       "defaultConfiguration": "development"

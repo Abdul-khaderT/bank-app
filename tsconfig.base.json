@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@backbase-gsa/transactions": ["libs/transactions/src/index.ts"],
+      "@backbase-gsa/transfer": ["libs/transfer/src/index.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
